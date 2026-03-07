@@ -1,28 +1,16 @@
+let sum = require('./math')
+let http = require('http')
 
-let http=require('http')
-let server=http.createServer((req,res)=>{
-   if(req.url=='/home'){
+let server = http.createServer((req,res)=>{
     res.writeHead(200)
-    res.write('Welcome to QIS College')
+
+    res.write(`sum = ${sum.add(5,7)}\n`)
+    res.write(`sub = ${sum.sub(6,7)}\n`)
+    res.write(`mul = ${sum.mul(5,6)}\n`)
+
     res.end()
-   }
-   else if(req.url=='/about'){
-     res.writeHead(200)
-     res.write("About page...")
-     res.end()
-   }
-   else if(req.url=='/contact'){
-     res.writeHead(200)
-     res.write("Contact page...")
-     res.end()
-   }
-   else{
-     res.writeHead(200)
-     res.write("Page not found...")
-     res.end()
-   }
 })
 
-server.listen(3000,`127.0.0.1`,()=>{
-    console.log(`server running on http://127.0.0.1:3000/`)
+server.listen(3000,'127.0.0.1',()=>{
+    console.log('server run on http://127.0.0.1:3000')
 })
