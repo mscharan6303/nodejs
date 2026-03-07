@@ -380,7 +380,7 @@ console.log('content appended successfully')
 
 
 
-//6.
+//6.Asynchronous writefile
 let fs=require('fs')
 let user={name:'Alice',age:25,city:'NewYork'}
 fs.writeFile('user.json',JSON.stringify(user,null,2),'utf8',(err)=>{
@@ -390,6 +390,21 @@ fs.writeFile('user.json',JSON.stringify(user,null,2),'utf8',(err)=>{
     }
     console.log('wrote the data sucessfully')
 })
+
+
+
+
+
+//7.deleting files using fs.unlink
+
+let fs=require('fs')
+fs.unlink('example.txt',(err)=>{
+    if(err){
+        console.log('log error message: ',err);
+        return;
+    }
+    console.log('deleted successfully');
+});
 
 
 
