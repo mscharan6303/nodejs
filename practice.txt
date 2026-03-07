@@ -361,6 +361,11 @@ fs.writeFile('example.txt','welcome to Node.js!','utf8',(err)=>{
 
 
 
+-------------------------------------------------------------------------------------------------------------------------
+07 march 2026
+-------------------------------------------------------------------------------------------------------------------------
+
+
 
 //5.appending data to a file asynchronously
 let fs=require('fs')
@@ -395,7 +400,7 @@ fs.writeFile('user.json',JSON.stringify(user,null,2),'utf8',(err)=>{
 
 
 
-//7.deleting files using fs.unlink
+//7.deleting files asynchronously
 
 let fs=require('fs')
 fs.unlink('example.txt',(err)=>{
@@ -405,6 +410,18 @@ fs.unlink('example.txt',(err)=>{
     }
     console.log('deleted successfully');
 });
+
+//deleting files asynchronously
+
+let fs=require('fs')
+try{
+    fs.unlinkSync('example.txt');
+console.log('file deleted successfully');
+}catch(err){
+    console.err("error deleting file: ",err)
+}
+
+
 
 
 
