@@ -10,7 +10,7 @@ Give this command to automatically run the server after modification for the fil
 
 
 
-
+//completed practice
 let http=require('http')
 let n=5;
 let f=1;
@@ -27,7 +27,7 @@ server.listen(3000,`127.0.0.1`,()=>{
 })
 
 
-
+//completed practice
 let http=require('http')
 let server =http.createServer((req,res)=>{
     res.writeHead(200)
@@ -39,7 +39,7 @@ server.listen(3000,`127.0.0.1`,()=>{
 })
 
 
-
+//completed practice
 let http=require('http')
 let x=12;
 let y=13;
@@ -51,6 +51,314 @@ let server =http.createServer((req,res)=>{
 server.listen(3000,`127.0.0.1`,()=>{
     console.log(`server run on http://127.0.0.1:3000`)
 })
+
+
+
+//completed practice
+let http=require('http')
+let server=http.createServer((req,res)=>{
+   if(req.url=='/home'){
+    res.writeHead(200)
+    res.write('Welcome to QIS College')
+    res.end()
+   }
+   else if(req.url=='/about'){
+     res.writeHead(200)
+     res.write("About page...")
+     res.end()
+   }
+   else if(req.url=='/contact'){
+     res.writeHead(200)
+     res.write("Contact page...")
+     res.end()
+   }
+   else{
+     res.writeHead(200)
+     res.write("Page not found...")
+     res.end()
+   }
+})
+
+server.listen(3000,`127.0.0.1`,()=>{
+    console.log(`server running on http://127.0.0.1:3000/`)
+})
+
+
+
+//example-2
+//string functions
+var x="Welcome to Codetantra"
+var y='Node.js Tutorials'
+var z=['Node.js','Express.js','Typescript']
+
+console.log(x)
+console.log(y)
+console.log("concat using(+): ",(x+y))
+console.log("Concat Using Function : ",(x.concat(y)))
+console.log("Split string: ",x.split(' '))
+console.log("Join string: ",z.join(','))
+console.log("Char At index 5: ",x.charAt(5))
+
+
+//completed practice
+let to=require('to-case')
+x='HELLO world'
+console.log("lowercase:"+to.lower(x))
+console.log("uppercase:"+to.upper(x))
+console.log("capitalcase:"+to.capital(x))
+console.log("camelcase:"+to.camel(x))
+console.log("constantcase:"+to.constant(x))
+console.log("dotcase:"+to.dot(x))
+console.log("inversecase:"+to.inverse(x))
+console.log("pascalcase:"+to.pascal(x))
+console.log("sentencecase:"+to.sentence(x))
+console.log("slugcase:"+to.slug(x))
+console.log("snakecase:"+to.snake(x))
+console.log("spacecase:"+to.space(x))
+console.log("titlecase:"+to.title(x))
+
+
+
+
+let http=require('http')
+let server=http.createServer((req,res)=>{
+   if(req.url=='/home'){
+    res.writeHead(200)
+    res.write('Welcome to QIS College')
+    res.end()
+   }
+   else if(req.url=='/about'){
+     res.writeHead(200)
+     res.write("About page...")
+     res.end()
+   }
+   else if(req.url=='/contact'){
+     res.writeHead(200)
+     res.write("Contact page...")
+     res.end()
+   }
+   else{
+     res.writeHead(200)
+     res.write("Page not found...")
+     res.end()
+   }
+})
+
+server.listen(3000,`127.0.0.1`,()=>{
+    console.log(`server running on http://127.0.0.1:3000/`)
+})
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------
+06 march 2026
+------------------------------------------------------------------------------------
+
+
+//completed practice
+//sum.js
+exports.add=(a,b)=>{
+    return a+b
+}
+
+//index.js
+let sum=require('./sum')
+let http=require('http')
+
+let server=http.createServer((req,res)=>{
+    res.writeHead(200)
+    res.end(`sum =${sum.add(5,7)}`)
+})
+
+server.listen(3000,'127.0.0.1',()=>{
+    console.log('server run on http://127.0.0.1:3000')
+})
+
+
+//math.js
+exports.add=(a,b)=>{
+    return a+b
+}
+exports.sub=(a,b)=>{
+    return a-b
+}
+exports.mul=(a,b)=>{
+    return a*b
+}
+
+//index.js
+let sum = require('./math')
+let http = require('http')
+
+let server = http.createServer((req,res)=>{
+    res.writeHead(200)
+
+    res.write(`sum = ${sum.add(5,7)}\n`)
+    res.write(`sub = ${sum.sub(6,7)}\n`)
+    res.write(`mul = ${sum.mul(5,6)}\n`)
+
+    res.end()
+})
+
+server.listen(3000,'127.0.0.1',()=>{
+    console.log('server run on http://127.0.0.1:3000')
+})
+
+
+
+
+
+//getting a url
+let url = require('url')
+let string = 'https://www.example.com/user?id=56'
+let pu = url.parse(string, true)
+console.log("protocol :", pu.protocol)
+console.log("hostname :", pu.hostname)
+console.log("path :", pu.pathname)
+console.log("query :", pu.query)
+
+
+
+
+//creating a url
+let url=require('url')
+let urlObj={
+    protocol:'https:',
+    hostname:'www.example.com',
+    pathname:'/user',
+    query:{id:'1234'}
+}
+console.log(url.format(urlObj))
+
+
+
+
+//resolving a url
+let url=require('url')
+let bu="http://127.0.0.1:3000"
+let ru="/user"
+console.log(url.resolve(bu,ru))
+
+
+
+
+//parsing query parameter
+let url=require('url')
+let string="http://www.example.com/user?id=1234"
+let ps=url.parse(string,true)
+console.log(ps.query)
+
+
+
+
+//Parsing Query Modules
+//1.parsing query stru=img
+let qs=require('querystring')
+let string='id=1234&&name=raj&age=23'
+let pq=qs.parse(string)
+console.log(pq)
+
+//2.formatting an object into a query string
+let qs=require('querystring')
+let obj={id:'1234',name:'raj',age:'23'}
+console.log(qs.stringify(obj))
+
+
+
+
+//FILE SYSTEMS
+
+
+
+//1.REAGING FILES ASYNCHRONOUSLY
+
+//example.txt
+Welcome to QIS!
+
+//index.js
+
+let fs=require('fs')
+fs.readFile('example.txt','utf8',(err,data)=>{
+    if(err){
+        console.log("Error msg: ",err)
+        return
+    }
+    console.log("file content: ",data)
+})
+final output in terminal=>file content:  Welcome to QIS! 
+
+
+
+
+
+//example using promises
+let fs=require('fs').promises
+fs.readFile('example.txt','utf8').then((data)=>{
+    console.log('File Content: ',data)
+}).catch((err)=>{
+    console.log('Error message: ',err)
+})
+
+
+
+
+//Static File Server in Node.js
+let http=require('http')
+let fs=require('fs')
+let path=require('path')
+
+let server=http.createServer((req,res)=>{
+    if(req.url=='/'||req.url=='/index.html'){
+        let fp=path.join(__dirname+'/index.html')
+        fs.readFile(fp,'utf8',(err,data)=>{
+            if(err){
+                res.writeHead(200,{'content-type':'text/plain'})
+                res.end('Error mesage:',err)
+                return
+            }
+            else{
+                res.writeHead(200,{'content-type':'text/html'})
+                res.end(data)
+            }
+        });
+    }
+    else{
+        res.writeHead(404)
+        res.end('page not found');
+    }
+})
+server.listen(3000,'127.0.0.1',()=>{
+    console.log('server run on http://127.0.0.1:3000')
+})
+
+
+
+
+//2.reading file synchronously
+let fs=require('fs')
+let data=fs.readFileSync('example.txt','utf8')
+console.log(data)
+
+
+
+
+
+//3.writing a file asynchronously
+let fs=require('fs')
+fs.writeFile('example.txt','welcome to Node.js!','utf8',(err)=>{
+    if(err){
+        console.log('error message: ',err)
+        return  
+    }
+    console.log('wrote the file content...')
+})
+
+
 
 
 
