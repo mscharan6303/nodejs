@@ -1,6 +1,2119 @@
 -------------------------------------------------------------------------------------------
+Javascript
+-------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+/*---------------------------------------------------24-02-26---------------------------------------------------------
+
+//push operation
+
+let arr=[1,2,3]
+
+document.writeln("before adding : "+arr+"<br>")
+
+arr.push(4)
+
+arr.push(5)
+
+document.writeln("after adding: "+arr)
+
+let arr=[5,7,8,12,34]
+
+let earr=[]
+
+for(let i=0;i<arr.length;i++){
+
+    if(arr[i]%2==0){
+
+        earr.push(arr[i])
+
+    }
+
+}
+
+document.writeln("even array elements: "+earr)
+
+//pop operation
+
+let arr = ['raj','ram','ravi','raki']
+
+let removed = arr.pop()
+
+document.writeln("after pop: " + removed)
+
+//unshift operation
+
+let arr = ['raj','ram','ravi','raki']
+
+arr.unshift('theshu')
+
+document.writeln("after unshift: " +arr)
+
+let arr = ['raj','ram','ravi','raki']
+
+let res = []
+
+for (let i = arr.length - 1; i >= 0; i--) {
+
+    let rem = arr.pop()
+
+    res.push(rem)
+
+}
+
+document.writeln("Reversed array: " + res)
+
+let arr = ['raj','ram','ravi','raki']
+
+arr.splice(2,0,'yash')
+
+arr.splice(2,0,'yash',1,4)
+
+document.writeln(arr)
+
+let arr = ['raj','ram','ravi','raki']
+
+let x=arr.indexOf('raki')
+
+let y=arr.indexOf('ram',-2)
+
+document.writeln(x)
+
+document.writeln(y)
+
+let arr = ['raj','ram','ravi','raki']
+
+let i=arr.lastIndexOf('raki',3)
+
+document.writeln(i)
+
+let arr = [1, 2, 3, 2, 4, 2, 5];
+
+if (arr.lastIndexOf(7) !== -1) {
+
+    document.writeln("7 exists in the array");
+
+} else {
+
+    document.writeln("7 does not exist in the array");
+
+}
+
+let arr=[1,2,3,2,4,2,5]
+
+let last=arr.lastIndexOf(2)//5
+
+document.writeln("last occurance : "+last+"<br>")
+
+let secondLast=arr.lastIndexOf(2,last-1) //3
+
+document.writeln("SecondLast:"+secondLast)
+
+let arr=[1,2,3,2,4,2,5]
+
+let count=0
+
+let last=arr.lastIndexOf(2)
+
+while(last!==-1){
+
+    count++
+
+    last=arr.lastIndexOf(2,last-1)
+
+}
+
+document.writeln("Count: ",count)
+
+//removing the last occurance of the element
+
+let arr=[1,2,3,2,4,2,5]
+
+let last=arr.lastIndexOf(2)//5
+
+if(last!==-1){
+
+    arr.splice(last,1)
+
+}
+
+document.writeln(arr)
+
+//Include operation problems
+
+//1.chec number is exits or not
+
+let arr=[1,2,3,2,4,2,5]
+
+let x=arr.includes(2)//true
+
+document.writeln(x)
+
+//2.Valid User or not
+
+let arr=['admin','editor','staff']
+
+if(arr.includes('editor')){
+
+    document.writeln("Access Granted!")
+
+}
+
+else{
+
+        document.writeln("Access Deined!")
+
+}
+
+//3.check the dupilicate exists
+
+let arr=[1,2,3,4,5]
+
+let dup=false
+
+let seen=[]
+
+for(let i=0;i<arr.length;i++){
+
+    if(seen.includes(arr[i])){
+
+        dup=true
+
+        break
+
+    }
+
+    seen.push(arr[i])
+
+}
+
+document.writeln(dup)
+
+//4.remove duplicate elements
+
+let arr=[1,2,3,2,4,2,5]
+
+let dup=false
+
+let seen=[]
+
+for(let i=0;i<arr.length;i++){
+
+    if(seen.includes(arr[i])){
+
+        continue
+
+    }
+
+    seen.push(arr[i])
+
+}
+
+document.writeln(seen)
+
+//calllback function
+
+function Greet(name,sayBye){
+
+    document.writeln("Hello "+name+"!<br>")
+
+    sayBye();
+
+}
+
+function sayBye(){
+
+    document.writeln("Good Bye!")
+
+}
+
+Greet('Charan',sayBye)
+
+function add(num1,num2,res){
+
+    res(num1 +num2 )
+
+}
+
+function print(x){
+
+    document.writeln("res: ",x)
+
+}
+
+add(5,6,print)
+
+//arrow function
+
+let add = (num1, num2, result) => {
+
+    result(num1 + num2);   // ✅ call function
+
+}
+
+let print = (x) => {
+
+    document.writeln("result: " + x);
+
+}
+
+add(7, 9, print);
+
+---------------------------------------------------25-02-26---------------------------------------------------------
+
+//first even number
+
+let arr=[1,3,4,7,8,9]
+
+let result=arr.find(num=>num%2==0)
+
+document.writeln(result)
+
+//first number greater than 50
+
+let arr=[1,3,45,75,85,90]
+
+let result=arr.find(num=>num>50);
+
+document.writeln(result
+
+//find the student by id
+
+let students=[
+
+    {id:501,name:"mahi"},
+
+    {id:502,name:"charan"},
+
+    {id:503,name:"theshu"}
+
+]
+
+let result=students.find(student=>student.id==502);
+
+document.writeln(JSON.stringify(result))
+
+//first adult user
+
+let persons=[
+
+    {name:"mahi",age:20},
+
+    {name:"charan",age:21},
+
+    {name:"theshu",age:19}
+
+]
+
+let result=persons.find(person=>person.age>=18);
+
+document.writeln(JSON.stringify(result))
+
+//10.findIndexOf
+
+//first greater than 5 index vaklue
+
+let arr=[3,5,7,9]
+
+let result=arr.findIndex(num=>num>5)
+
+document.writeln(result)
+
+//11.forEach
+
+//print all numbers
+
+let arr=[3,5,7,9]
+
+arr.forEach(num=>{
+
+    document.writeln(num+"<br>")
+
+})
+
+//print square of all numbers
+
+let arr = [3,5,7,9]
+
+arr.forEach(num => {
+
+  document.writeln(num * num + "<br>");
+
+});
+
+//print index and value
+
+let arr=[3,5,7,9]
+
+res=arr.forEach((num,index)=>{
+
+    document.writeln(index+" : "+num+"<br>")
+
+})
+
+//add 5 to each element 
+
+let arr=[3,5,7,9]
+
+res=arr.forEach((num,index,nums)=>{
+
+    nums[index]=num+5
+
+})
+
+document.writeln(arr)
+
+//count the even numbers
+
+let arr=[4,5,7,6,8,9]
+
+let count=0
+
+arr.forEach(num=>{
+
+    if(num%2==0){
+
+        count++
+
+    }
+
+})
+
+document.writeln(count)
+
+//print name of persons object
+
+let persons=[
+
+    {name:"ravi",age:23},
+
+    {name:"raju",age:34},
+
+    {name:"raki",age:54}
+
+]
+
+persons.forEach(person=>{
+
+    document.writeln(person.name)
+
+})
+
+//12.Map()
+
+//double of each number
+
+let nums=[1,3,5,7]
+
+let result=nums.map(num=>num*2)
+
+document.writeln(result)
+
+//number to string
+
+let nums=[1,3,5,7]
+
+let result=nums.map(num=>num.toString())
+
+document.writeln(result)
+
+//get length of the word
+
+let words=['Apple','orange','mango']
+
+let result=words.map(word=>word.length)
+
+document.writeln(result)
+
+//extract names from object
+
+let persons=[
+
+    {name:"ravi",age:23},
+
+    {name:"raju",age:34},
+
+    {name:"raki",age:54}
+
+]
+
+let result=persons.map(person=>person.name)
+
+document.writeln(result)
+
+// change price to rupees symbol
+
+let prices = [100, 345, 567];
+
+let result = prices.map(price => ₹${price});
+
+document.writeln(result);
+
+// convert array to html list items
+
+let fruits = ['Apple','Orange','Mango'];
+
+let result = fruits.map(fruit => <li>${fruit}</li>);
+
+document.writeln(result);
+
+// 13.filter()
+
+//get even numbers
+
+let nums=[1,2,3,4,5]
+
+let result=nums.filter(num=>num%2==0)
+
+document.writeln(result)
+
+//get word longer than 4 letters
+
+let words=["hari","charan","Mahendra chow","Ram","karimulla"]
+
+let result=words.filter(words=>words.length>4)
+
+document.writeln(result)
+
+//filter products under 1000
+
+let products=[
+
+    {pid:1,name:"keyboard",cost:2000},
+
+    {pid:2,name:"mouse",cost:200},
+
+    {pid:3,name:"laptop",cost:5000}
+
+]
+
+let result=products.filter(product=>product.cost<1000)
+
+document.writeln(JSON.stringify(result))
+
+//get students passed marks are grater than equal to 35 or not
+
+let students=[
+
+    {name:"charan",marks:90},
+
+    {name:"theshu",marks:34},
+
+    {name:"michael mohammad mahendra chow",marks:40},
+
+    {name:"hari",marks:47}
+
+]
+
+let result=students.filter(student=>student.marks>=35)
+
+result.forEach(sname=>{
+
+    document.writeln(sname.name)})
+
+document.writeln(JSON.stringify(result))
+
+//filter employees salary>30000 and age<35
+
+let employees = [
+
+    {name:"charan",salary:90000,age:24},
+
+    {name:"theshu",salary:60000,age:30},
+
+    {name:"michael mohammad mahendra chow",salary:70000,age:40},
+
+    {name:"hari",salary:80000,age:25}
+
+]
+
+let result = employees.filter(employee => employee.salary>30000&&employee.age < 35);
+
+document.writeln(JSON.stringify(result));
+
+//14.reduce()
+
+//sum of all numbers
+
+let nums=[1,2,3,4,5]
+
+let res=nums.reduce((acc,cur)=>acc+cur,0)
+
+document.writeln(res)
+
+//find amx number
+
+let nums=[2,3,9,7]
+
+let res=nums.reduce((acc,cur)=>{
+
+    return acc>cur?acc:cur
+
+},nums[0])
+
+document.writeln(res)
+
+//flatten 2D array
+
+let nums=[[2,3],[3,4],[5,6]]
+
+let res=nums.reduce((acc,cur)=>{
+
+    return acc.concat(cur)
+
+},[])
+
+document.writeln(JSON.stringify(res))
+
+//total price of the products
+
+let products=[
+
+    {id:1,name:"laptop",price:56000},
+
+    {id:2,name:"mouse",price:1500},
+
+    {id:3,name:"keyboard",price:2500}
+
+]
+
+let res=products.reduce((acc,cur)=>{
+
+    return acc+cur.price
+
+},0)
+
+document.writeln(res)
+
+//count occurance of the element
+
+let nums=[1,2,3,2,4,2,3]
+
+let res=nums.reduce((acc,cur)=>{
+
+    acc[cur]=(acc[cur]||0)+1
+
+    return acc
+
+},{})
+
+document.writeln(JSON.stringify(res))
+
+---------------------------------------------------26-02-26---------------------------------------------------------
+
+//15.sort
+
+//sort string alphabetically
+
+let names=["raj","amar","raghu","bala"]
+
+names.sort()
+
+document.writeln(names)
+
+//sort string in reverse alphabetical order
+
+let names=["raj","amar","raghu","bala"]
+
+names.sort().reverse()
+
+document.writeln(names)
+
+//sort number in ascending order
+
+let nums=[2,4,5,7,1]
+
+nums.sort((a,b)=>a-b)
+
+document.writeln(nums)
+
+//sort number in decending order
+
+let nums=[2,4,5,7,1]
+
+nums.sort((a,b)=>b-a)
+
+document.writeln(nums)
+
+//sort word by length
+
+let words=['raju','harish','harsha','varma','ram']
+
+words.sort((a,b)=>a.length-b.length)
+
+document.writeln(words)
+
+//sort array of the object by age
+
+let arr=[
+
+    {name:"raj",age:25},
+
+    {name:"amar",age:21},
+
+    {name:"raghu",age:28},
+
+    {name:"bala",age:23}
+
+]
+
+arr.sort((a,b)=>a.age-b.age)
+
+document.writeln(JSON.stringify(arr))
+
+//17.slice
+
+//example
+
+let nums = [1,2,3,4,5];
+
+let sliced = nums.slice(1,4);
+
+document.writeln(sliced);
+
+//18.Join
+
+//example
+
+let fruits=['apple','banana','cherry']
+
+let res=fruits.join()
+
+document.writeln(res)
+
+//19.concat
+
+//example
+
+let arr1=[1,2,3]
+
+let arr2=[4,5,6]
+
+let res=arr1.concat(arr2)
+
+document.writeln(res)
+
+//STRING METHODS
+
+//1.length
+
+let str="Hello,World!"
+
+document.writeln(str.length)
+
+//2.toUpperCase
+
+let str="hello"
+
+document.writeln(str.toUpperCase())
+
+//3.toLowerCase
+
+let str="Hello"
+
+document.writeln(str.toLowerCase())
+
+//4.charAt()
+
+let str="JavaScript"
+
+document.writeln(str.charAt(4))
+
+//5.indexOf()
+
+let str="JavaScript"
+
+document.writeln(str.indexOf("Script"))
+
+//6.lastIndexOf()
+
+let str="Hello World,World"
+
+document.writeln(str.lastIndexOf("World"))
+
+//7.includes
+
+let str="Hello,world"
+
+document.writeln(str.includes("world"))
+
+document.writeln(str.includes("java"))
+
+//8.startsWith
+
+let str="Hello,world"
+
+document.writeln(str.includes("Hello"))
+
+//9.endsWith
+
+let str="Hello,world"
+
+document.writeln(str.includes("world"))
+
+//10.slice
+
+let str="JavaScript"
+
+document.writeln(str.slice(0,4))
+
+document.writeln(str.slice(-6))
+
+//11.substring
+
+let str="JavaScript"
+
+document.writeln(str.substring(0,4))
+
+document.writeln(str.substring(4,10))
+
+//12.replace
+
+let str="I Love JavaScript"
+
+document.writeln(str.replace("JavaScript","Java"))
+
+//13.replaceAll
+
+let str="apple apple apple"
+
+document.writeln(str.replaceAll("apple","banana"))
+
+//14.split()
+
+let num = "this is pen";
+
+let arr = num.toString().split("");
+
+document.writeln(arr);
+
+//15.trim()
+
+let str="  Hello World  "
+
+document.writeln(str.trim())
+
+// //16.trimStart
+
+let str="  this is a class room"
+
+document.writeln(str.trimStart())
+
+//17.trimEnd
+
+let str="this is a class room  "
+
+document.writeln(str.trimEnd())
+
+//18.padStart()
+
+let str="70"
+
+document.writeln(str.padStart(4,'0'))
+
+//19.padEnd()
+
+let str="70"
+
+document.writeln(str.padEnd(4,'0'))
+
+//20.repeat()
+
+let str="70"
+
+let res='*'.repeat(5)+str
+
+document.writeln(res)
+
+//21.concat()
+
+let str="750"
+
+let res='*'.repeat(5).concat(str)
+
+document.writeln(res)
+
+//22.at(index)
+
+let str="Hello"
+
+document.writeln(str.at(-1))
+
+document.writeln(str.at(1))
+
+//23.isprototypeOf()
+
+let str=new String("Hello")
+
+let res=String.prototype.isPrototypeOf(str)
+
+document.writeln(res)
+
+//24.toString()
+
+let text = new String("Hello");
+
+let result = text.toString();
+
+document.writeln(result);
+
+//25.charCodeAT(index)
+
+let text="Hello"
+
+document.writeln(text.charCodeAt(0))
+
+//26.fromCharCode()
+
+document.writeln(String.fromCharCode(97,98,99))
+
+//27.localeCompare(compareString)
+
+let str1="apple"
+
+let str2="banana"
+
+document.writeln(str1.localeCompare(str2))
+
+let obj=[
+
+    {name:"raj",age:56},
+
+    {name:"hari",age:43},
+
+    {name:"ramu",age:34},
+
+    {name:"amar",age:23}
+
+]
+
+let res=obj.sort((a,b)=>a.name.localeCompare(b.name))
+
+document.writeln(JSON.stringify(res))
+
+//check if the email id is valid or not
+
+let email="harivenkatacharan@gmail.com"
+
+let res=email.includes('@')&&email.includes('.')
+
+if(res){
+
+    document.writeln("valid")
+
+}
+
+else{
+
+    document.writeln("Invalid")
+
+}
+
+//Extract user name from the email-id
+
+let email="harivenkatacharan@gmail.com"
+
+let res=email.slice(0,email.indexOf('@'))
+
+document.writeln(res)
+
+//Extract all usernames 
+
+let person=[
+
+    {name:"HVC",email:"harivenkatacharan@gmail.com"},
+
+    {name:"MMM",email:"michaelmohammadmahendrachow@gmail.com"},
+
+    {name:"Emma",email:"raki@gmail.com"}
+
+]
+
+let res=person.map(ele=>ele.email.slice(0,ele.email.indexOf('@')))
+
+document.writeln(JSON.stringify(res))
+
+---------->seperate folder<----------------
+
+//---dom.html----
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <script src="dom.js"></script>
+
+</head>
+
+<body>
+
+    <!--
+
+        <div id="text">
+
+        </div>
+
+        <button id="button" onclick="clickHandler()">click</button>
+
+    -->
+
+    <input type="text" id="Text" placeholder="Enter item">
+
+    <button onclick="clickHandler()">Add</button>
+
+    <ul id="listItem"></ul>
+
+</body>
+
+</html>
+
+*/
+
+//---dom.js-----
+
+let names=["sai","charan","mahi","teshu"]
+
+let color=['red','green','blue','orange','purple']
+
+let index=0
+
+let clickHandler=()=>{
+
+    let p=document.createElement('p')
+
+    p.innerText=names[index]
+
+    p.style.color=color[index++]
+
+    if(index>color.length-1){
+
+        index=0
+
+    }
+
+    let d=document.getElementById("text")
+
+    d.appendChild(p)
+
+}
+
+----same file but different problems----------
+
+let clickHandler =()=>{
+
+    let t=document.getElementById('Text').value+" "
+
+    let li=document.createElement('li')
+
+    li.innerText=t;
+
+    let btn=document.createElement('button')
+
+    btn.innerText="Remove"
+
+    btn.onclick=()=>{
+
+        li.remove()
+
+    }
+
+    let d=document.getElementById('listItem')
+
+    d.appendChild(li)
+
+    li.appendChild(btn)
+
+}
+
+---------------------------------------------------27-02-26---------------------------------------------------------
+
+<-----a.html------
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <script src="a.js"></script>
+
+</head>
+
+<body>
+
+    <h1>TO-DO List</h1>
+
+    <input type="text" id="Text">
+
+    <button onclick="addTask()" id="btn">ADD</button>
+
+    <ul id="listItems"></ul>
+
+</body>
+
+</html>
+
+<-----a.js-------
+
+let currentTag
+
+let addTask=()=>{
+
+    let input=document.getElementById('Text')
+
+    let span=document.createElement("span")
+
+    span.innerText=input.value+" "
+
+    if(input.value==''||input.value==' '){
+
+        alert("Enter Data!")
+
+        return
+
+    }
+
+    let rbtn=document.createElement('button')
+
+    rbtn.innerText='remove'
+
+    rbtn.onclick=()=>{
+
+        li.remove()
+
+    }
+
+    let ebtn=document.createElement('button')
+
+    ebtn.innerText='edit'
+
+    ebtn.onclick=()=>{
+
+        input.value=span.innerText.trim()
+
+        currentTag=span
+
+        let mbtn=document.getElementById('btn')
+
+        mbtn.innerText='update'
+
+        mbtn.onclick=updateTask
+
+    }
+
+    updateTask=()=>{
+
+        //span.innerText=input.value+" "
+
+        currentTag.innerText=input.value
+
+        let mbtn=document.getElementById('btn')
+
+        mbtn.innerText='ADD'
+
+        mbtn.onclick=addTask
+
+        input.value=' '
+
+    }
+
+    let li=document.createElement('li')
+
+    li.appendChild(span);
+
+    li.appendChild(ebtn);
+
+    li.appendChild(rbtn)
+
+    let item=document.getElementById('listItems')
+
+    item.appendChild(li)
+
+    
+
+    input.value=' '
+
+}
+
+<-----------------a.css----------
+
+/* Blue full background */
+
+html{
+
+    height:100%;
+
+    background:linear-gradient(135deg,#2d6cdf,#1e4db7);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+/* White Card */
+
+body{
+
+    width:420px;
+
+    padding:30px;
+
+    background:#f4f4f4;
+
+    border-radius:15px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,0.3);
+
+    font-family:Arial, sans-serif;
+
+}
+
+/* Title */
+
+h2{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+}
+
+/* Input */
+
+input{
+
+    width:65%;
+
+    padding:10px;
+
+    border-radius:8px;
+
+    border:2px solid #2d6cdf;
+
+    outline:none;
+
+}
+
+/* Add Button */
+
+button{
+
+    padding:10px 16px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#2d6cdf;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+button:hover{
+
+    background:#1e4db7;
+
+}
+
+/* List */
+
+ul{
+
+    list-style:none;
+
+    margin-top:20px;
+
+    max-height:250px;
+
+    overflow-y:auto;
+
+    padding:0;
+
+}
+
+/* List Items */
+
+li{
+
+    background:#b7cfd1;
+
+    padding:12px;
+
+    margin-bottom:10px;
+
+    border-radius:8px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+----------------
+
+s.hmtl
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <script src="s.js"></script>
+
+</head>
+
+<body>
+
+    <p >C programming</p>
+
+    <p>Java</p>
+
+    <p>python</p>
+
+    <p >JS</p>
+
+    <button onclick=""action()">Click</button>
+
+    <div id="demo"></div>
+
+</body>
+
+</html>
+
+s.js
+
+let action=()=>{
+
+    let x=document.getElementsByTagName('p')
+
+    let div=document.getElementById('demo')
+
+    for(let i=0;i<x.length;i++){
+
+       div.appendChild(x[0])
+
+    }
+
+}
+
+---------------------------
+
+<---take one js file do this -->
+
+const a = 5
+
+const b = 7
+
+document.writeln${a} + ${b} = ${a + b})
+
+//
+
+const a = 5;
+
+for (let i = 1; i <= 10; i++) {
+
+    document.writeln${a}  ${i} = ${a  i} <br>);
+
+}
+
+//funsction calls inside 
+
+const Greet=()=>"Hello"
+
+document.writeln${Greet()})
+
+//default  parameters
+
+const Greet=(name='guest')=>"Hello"+name
+
+document.writeln${Greet()} <br>)
+
+document.writeln${Greet('Raj')})
+
+//destructuring assignment
+
+const arr=[10,20,30,40]
+
+const [a,b,c,d]=arr
+
+document.writeln(a+" "+b+" "+c+" "+d)
+
+//object destructuring 
+
+const obj = { name: "raj", age: 24, address: "hyd" }
+
+const { name, age } = obj
+
+const fname = name
+
+document.writeln(fname + " " + age)
+
+//another example for object destructuring
+
+const obj = { name: "rani", age: 24, address: "hyd" }
+
+const { name:fname, age:page } = obj
+
+document.writeln(fname + " " + page)
+
+////another example
+
+const obj = { name: "rani", age: 24, address:{city:'hyd',pincode:520001} }
+
+const {address:{city,pincode}} = obj
+
+document.writeln(city + " " + pincode)
+
+/*---------------------------------------------------28-02-26------------------------------------------------------
+
+//object
+
+let obj={pname:"hari",page:25}
+
+let cobj={...obj}
+
+document.writeln(JSON.stringify(cobj))
+
+// another example object
+
+let obj1 = { pname: "hari", page: 25 }
+
+let obj2 = { pname1: "harsha", page1: 45 }
+
+let mobj = { ...obj1, ...obj2 }
+
+document.writeln(JSON.stringify(mobj))
+
+//overriding properties
+
+let obj1={pname:"hari",page:25}
+
+let mobj={...obj1,page:30,paddress:'hyd'}
+
+document.writeln(JSON.stringify(mobj))
+
+//spread
+
+let add=(a,b,c)=>{
+
+    return a+b+c
+
+}
+
+let arr=[1,5,7]
+
+document.writeln(add(...arr))
+
+//another example of spread
+
+let add=(arr)=>{
+
+    let sum=0
+
+    for(let i=0;i<arr.length;i++){
+
+        sum+=arr[i]
+
+    }
+
+    return sum
+
+}
+
+let arr=[1,5,8]
+
+document.writeln(add(...arr))
+
+//rest operator
+
+//collecting remaining array elements
+
+let nums=[1,2,3,4,5]
+
+let [first,second, ...rest]=nums
+
+document.writeln(first+"<br>")
+
+document.writeln(second+"<br>")
+
+document.writeln(JSON.stringify(rest))
+
+//object destructuring + rest operator
+
+let user={fname:"jani",age:25,address:'hyd',job:"dev"}
+
+let {fname, ...user1}=user
+
+document.writeln(fname+"<br>")
+
+document.writeln(JSON.stringify(user1))
+
+//oops concept
+
+//example without constructor
+
+class Greet{
+
+    greet1(){
+
+        document.writeln('Hello')
+
+    } 
+
+}
+
+let obj=new Greet()
+
+obj.greet1()
+
+//with argument
+
+class Greet{
+
+    person(name){
+
+        document.writeln('Hello ' + name)
+
+    } 
+
+}
+
+let obj = new Greet()
+
+obj.person('raki')
+
+//with constructor
+
+class Greet{
+
+    constructor(name){
+
+       this.name=name
+
+    }
+
+    person(){
+
+        document.writeln('Hello ' +this.name)
+
+    } 
+
+}
+
+let obj = new Greet('Raju')
+
+obj.person()
+
+//find the largest value among three numbers
+
+class Find_largest{
+
+    constructor(a,b,c){
+
+        this.num1 = a
+
+        this.num2 = b
+
+        this.num3 = c
+
+    }
+
+    largest(){
+
+        if(this.num1 > this.num2 && this.num1 > this.num3){
+
+            return this.num1
+
+        }
+
+        else if(this.num2 > this.num3){
+
+            return this.num2
+
+        }
+
+        else{
+
+            return this.num3
+
+        }
+
+    }
+
+}
+
+let obj = new Find_largest(10, 45, 25)
+
+document.writeln("Largest number is: " + obj.largest())
+
+//it generates numbers into an array.
+
+Because it generates numbers into an array.
+
+class Add_elements{
+
+    constructor(a){
+
+        this.arr=a
+
+    }
+
+    insert(n){
+
+        for(let i=0;i<n;i++){
+
+            this.arr.push(i)
+
+        }
+
+        return this.arr
+
+    }
+
+}
+
+let obj=new Add_elements([])
+
+document.writeln(JSON.stringify(obj.insert(7)))
+
+////Array Maximum Program
+
+class Add_elements {
+
+    constructor(a) {
+
+        this.arr = a
+
+    }
+
+    largest() {
+
+        let m = this.arr[0]
+
+        for (let i = 1; i < this.arr.length; i++) {
+
+            if (m < this.arr[i]) {
+
+                m = this.arr[i]
+
+            }
+
+        }
+
+        return m
+
+    }
+
+}
+
+let obj = new Add_elements([1,7,5,4,8,6])
+
+document.writeln(obj.largest())
+
+/*---------------------------------------------------02-03-26-------------------------------------------------------
+
+<html file>
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <script src="p.js"></script>
+
+</head>
+
+<body>
+
+    
+
+</body>
+
+</html>
+
+<JS file>
+
+//reverse of an array
+
+class Reverse_elements {
+
+    constructor(arr) {
+
+        this.arr = arr
+
+    }
+
+    reverse() {
+
+        let f= 0
+
+        let l=this.arr.length-1 
+
+        while(f<=1){
+
+            let t=this.arr[f]
+
+            this.arr[f]=this.arr[l]
+
+            this.arr[l]=t
+
+            f++
+
+            l--
+
+        }
+
+        return this.arr
+
+    }
+
+}
+
+let obj = new Reverse_elements([1,2,3,4,5])
+
+document.writeln(JSON.stringify(obj.reverse()))
+
+//"Class-Based Object Creator"
+
+class object_creation{
+
+    display(){
+
+        return {
+
+            f_name:this.fname,
+
+            l_name:this.lname,
+
+            age:this.age
+
+        } 
+
+    }
+
+}
+
+let obj=new object_creation()
+
+obj.fname="Ravi"
+
+obj.lname="Kumar"
+
+obj.age=45
+
+document.writeln(JSON.stringify(obj.display()))
+
+//how to create the private variable
+
+class object_creation{
+
+    #fname='Raki'                          
+
+}
+
+let obj=new object_creation()
+
+document.writeln(obj.fname)
+
+//explanation of above program
+
+// This will give undefined (or error in console).
+
+// Why?Because:#fname       is a private field.   It cannot be accessed outside the class.
+
+//4 pillars of oop
+
+//1.Encapsulation
+
+class ATM{
+
+    constructor(amount){
+
+        this.amount=amount
+
+    }
+
+    withdraw(value){
+
+        if(this.amount>value){
+
+            this.amount-=value
+
+            document.writeln("withdraw amount:"+value+"<br>")
+
+            return
+
+        }
+
+        else{
+
+            document.writeln(' not sufficient bal'+"<br>")
+
+        }
+
+    }
+
+    getBal(){
+
+        document.writeln("bal amount: "+this.amount+"<br>")
+
+    }
+
+}
+
+let obj=new ATM(5000)
+
+obj.getBal()
+
+obj.withdraw(2000)
+
+obj.getBal()
+
+//2.Abstraction
+
+class coffeMachine{
+
+    makeCoffee(){
+
+        this.#addSugar()
+
+        this.#addcoffeepowder()
+
+        this.#addMilk()
+
+        document.writeln("Coffee for Micheal Mohammad Mahendra Chow....")
+
+    }
+
+    #addSugar(){
+
+        document.writeln("Adding a sugar...<br>")
+
+    }
+
+    #addMilk(){
+
+        document.writeln("Adding Milk...<br>")
+
+    }
+
+    #addcoffeepowder(){
+
+        document.writeln("Adding CoffeePowder..<br>")
+
+    }
+
+}
+
+let obj=new coffeMachine()
+
+obj.makeCoffee()
+
+//3.Inheritance
+
+class FNumber{
+
+    first(){
+
+        document.writeln('First Number...<br>')
+
+    }
+
+}
+
+class SNumber extends FNumber{
+
+    second(){
+
+        document.writeln('Second Number...<br>')
+
+    }
+
+}
+
+let obj=new SNumber()
+
+obj.first()
+
+obj.second()
+
+//4.polymorphism
+
+class Animal{
+
+    speak(){
+
+        document.writeln("Animal Sound..")
+
+    }
+
+}
+
+class Cat extends Animal{
+
+    speak(){
+
+        document.writeln("Meow...")
+
+    }
+
+}
+
+let a=new Cat()
+
+a.speak()
+
+//another example of Inheritance
+
+class FirstNumber{
+
+    Num1(a){
+
+        return a
+
+    }
+
+}
+
+class SecondNumber extends FirstNumber{
+
+    Num2(a,b){
+
+        return this.Num1(a)+b
+
+    }
+
+}
+
+let obj=new SecondNumber()
+
+document.writeln(obj.Num2(7,9))
+
+//Constructor Inheritance Addition Program
+
+class FirstNumber{
+
+    constructor(a){
+
+        this.a=a
+
+    }
+
+}
+
+class SecondNumber extends FirstNumber{
+
+    constructor(a,b){
+
+        super(a)
+
+        this.b=b
+
+    }
+
+    add(){
+
+        return this.a+this.b
+
+    }
+
+}
+
+let obj=new SecondNumber(9,9)
+
+document.writeln(obj.add())
+
+//Constructor Inheritance Addition Program for three values
+
+class FirstNumber{
+
+    constructor(a){
+
+        this.a=a
+
+    }
+
+}
+
+class SecondNumber extends FirstNumber{
+
+    constructor(a,b){
+
+        super(a)
+
+        this.b=b
+
+    } 
+
+    add(){
+
+        return this.a+this.b
+
+    }
+
+}
+
+class ThirdNumber extends SecondNumber{
+
+    constructor(a,b,c){
+
+        super(a,b)
+
+        this.c=c
+
+    }
+
+    add(){
+
+        return this.a+this.b+this.c
+
+    }
+
+}
+
+let obj=new ThirdNumber(9,9,9)
+
+document.writeln(obj.add())
+
+//Multilevel Addition Inheritance Program"
+
+class FirstNumber{
+
+    constructor(a){
+
+        this.a=a
+
+    }
+
+}
+
+class SecondNumber extends FirstNumber{
+
+    constructor(a,b){
+
+        super(a)
+
+        this.b=b
+
+    } 
+
+    add(){
+
+        return this.a+this.b
+
+    }
+
+}
+
+class ThirdNumber extends SecondNumber{
+
+    constructor(a,c){
+
+        super(a)
+
+        this.c=c
+
+    }
+
+    add(){
+
+        return this.a+this.c
+
+    }
+
+}
+
+let obj1=new SecondNumber(5,7)
+
+let obj=new ThirdNumber(8,9)
+
+document.writeln(obj.add()+"<br>")
+
+document.writeln(obj1.add()+"<br>")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
 MongoDB
 -------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
 
 Microsoft Windows [Version 10.0.19045.6093]
 
