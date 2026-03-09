@@ -5600,6 +5600,9 @@ fs.renameSync('app.html','server.html',(err)=>{
 
 
 
+
+
+
 ----------------------------------------------------------------------------------
 express.js
 ----------------------------------------------------------------------------------
@@ -5763,6 +5766,54 @@ http://127.0.0.1:3200/503
 
 
 
+
+
+
+index.js
+---------
+let express=require('express')
+let app=express()
+
+app.use(express.static('public'))
+app.get('/',(req,res)=>{
+    res.sendFile(__dirname+'/index.html')
+})
+app.listen(4000,'127.0.0.1',()=>{
+    console.log('server run on http://127.0.0.1:4000')
+})
+
+
+index.html
+----------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>Welcome to Express.Js!</h1>
+    <img src="jaibabu.jpg" alt="">
+</body>
+</html>
+
+
+create a folder and name it as public, in that public folder place the index.css
+
+index.css
+----------
+body{
+    background-color: lightblue;
+    font-family: Arial;
+    text-align: center;
+}
+
+h1{
+    color: darkblue;
+    font-size: 40px;
+}
 
 
 
