@@ -5977,6 +5977,99 @@ index.html
 
 
 
+index.js
+---------
+let express=require('express')
+let app=express()
+let mongoose=require('mongoose')
+
+mongoose.connect('mongodb://127.0.0.1:27017/',{dbName:'Reg'}).then(()=>{
+    console.log('mongodb connected....')
+}).catch((err)=>{
+    console.log('error message',err)
+})
+
+app.use(express.urlencoded({extended:true}))
+let RSchema=new mongoose.Schema({
+    user:String,
+    age:Number,
+    gender:String,
+    skills:[String]
+
+},{versionKey:false})
+let Person=mongoose.model('persons',RSchema)
+
+app.get('/',(req,res)=>{
+    res.sendFile(__dirname+'/index.html')
+})
+
+app.post('/register',async (req,res)=>{
+    let pd=req.body
+    await Person.insertOne(pd)
+    res.json(pd)
+})
+
+
+// all data in database to browser
+app.get('/all',async(req,res)=>{
+    let pds=await Person.find()
+    res.json(pds)
+})
+
+// get all the details of the particular field in to the browser
+app.get('/all/:age',async(req,res)=>{
+    let age=Number(req.params.age)
+    let pds=await Person.find()
+    let per=pds.find((p)=>p.age===age)
+    res.json(per)
+})
+/*
+//greater than the given age
+app.get('/all/:age',async(req,res)=>{
+    let age=Number(req.params.age)
+    let pds=await Person.find({age:{$gt:age}})
+    //let per=pds.find((p)=>p.age===age)
+    res.json(pds)
+})
+*/
+app.listen(3000,'127.0.0.1',()=>{
+    console.log('server run on http://127.0.0.1:3000')
+})
+
+
+
+index.html
+------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Registration</h1>
+    <form action="/register" method="post">
+        UserName:<input type="text" name="user" placeholder="user name"><br>
+        age:<input type="number" name="age" ><br>
+
+        Gender:<br>
+        <input type="radio" name="gender" value="Male">Male
+        <input type="radio" name="gender" value="Female">Female
+        <input type="radio" name="gender" value="Other">Other <br>
+        Skills:<br>
+        <input type="checkbox" name="skills" value="Java">Java
+        <input type="checkbox" name="skills" value="Java Script">Java Script
+        <input type="checkbox" name="skills" value="Express.Js">Express.JS
+        <input type="checkbox" name="skills" value="React">React<br><br>
+
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>
+
+
+
 
 
 
