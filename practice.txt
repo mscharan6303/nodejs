@@ -6570,6 +6570,45 @@ input[type="submit"]:hover {
 
 
 
+---------------------------------------------------------------------------------------------------------------------------------------------------
+React JS
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+-> React is a declarative, efficient and flexible javascript library for building user interfaces
+-> React is used to build single page applications
+-> React allows us to create reusable UI componnets
+-> It is an open source, component based front-end library which is responsible only for the view layer of the application
+-> It was created by Jordan Walke, who was a engineer at facebook
+-> It as intially developed and maintained by facebook and later used in its products like whatsapp & instagram
+
+
+
+
+WHY WE USE REACT JS?
+
+-> The main objective of React js is to develop User Interfaces(UI) that improves the speed of the applications.
+-> It uses the virtual DOM(Javascript Object), which improves performance of the app.
+-> The Javascript virtual DOM is faster than the regular DOM
+-> We can use React Js on the client and sever side as well as with other frameworks
+-> It uses components and data patterns that improve readability and helps to maintain larger apps
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
