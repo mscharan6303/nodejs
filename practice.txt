@@ -6574,6 +6574,8 @@ input[type="submit"]:hover {
 React JS
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+
 -> React is a declarative, efficient and flexible javascript library for building user interfaces
 -> React is used to build single page applications
 -> React allows us to create reusable UI componnets
@@ -6595,10 +6597,60 @@ WHY WE USE REACT JS?
 
 
 
+CREATION OF A REACT APP
+
+npm create vite@latest my react-app --template react
 
 
 
 
+C:\Users\Admin>npm create vite@latest my react-app --template react
+npm warn "react" is being parsed as a normal command line argument.
+npm warn Unknown cli config "--template". This will stop working in the next major version of npm.
+Need to install the following packages:
+create-vite@8.3.0
+Ok to proceed? (y) y
+
+> npx
+> create-vite my react-app react
+
+|
+o  Select a framework:
+|  React
+|
+o  Select a variant:
+|  JavaScript
+|
+o  Use Vite 8 beta (Experimental)?:
+|  No
+|
+o  Install with npm and start now?
+|  Yes
+|
+o  Scaffolding project in C:\Users\Admin\my...
+|
+o  Installing dependencies with npm...
+npm warn Unknown env config "template". This will stop working in the next major version of npm.
+
+added 157 packages, and audited 158 packages in 1m
+
+33 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+|
+o  Starting dev server...
+npm warn Unknown env config "template". This will stop working in the next major version of npm.
+
+> my@0.0.0 dev
+> vite
+
+
+  VITE v7.3.1  ready in 484 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
 
 
 
